@@ -8,7 +8,6 @@ module.exports = withModuleFederationPlugin({
   filename: "remoteEntry.js",
   exposes: {
     "./AppComponent": "./src/app/app.component.ts",
-    "./LoginComponent": "./src/app/login/login.component.ts",
     "./UserAnalyticsComponent":
       "./src/app/user-analytics/user-analytics.component.ts",
   },
