@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { UserAnalyticsComponent } from './user-analytics/user-analytics.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [UserAnalyticsComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'microfrontend_remote';
