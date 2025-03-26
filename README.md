@@ -1,6 +1,36 @@
 # MicrofrontendRemote
 
+## Webpack Module Federation used in this Repo to run as Remote Application.
+
+By Using ModuleFederation Plugin to create the microfrontend remote application.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+
+Step 1: Create the Remote Application (Feature Module App)
+ng new microfrontend_remote --routing
+
+Step 2 :
+cd microfrontend_remote
+ng add @angular-architects/module-federation
+
+Step 3: Configure the Remote App
+Modify webpack.config.js in the microfrontend_remote:
+
+example code :
+const { shareAll } = require('@angular-architects/module-federation/webpack');
+const { withModuleFederationPlugin } = require('@angular-architects/module-federation');
+
+module.exports = withModuleFederationPlugin({
+name: 'remoteApp',
+exposes: {
+'./RemoteComponent': './src/app/remote.component.ts',
+},
+shared: {
+...shareAll({ singleton: true, strictVersion: false, requiredVersion: 'auto' }),
+},
+});
+
+Step 5 : Run the Application and follow below steps
 
 ## Development server
 
